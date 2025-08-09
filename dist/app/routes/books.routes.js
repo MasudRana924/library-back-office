@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // src/routes/book.route.ts
-const express_1 = __importDefault(require("express"));
-const books_conteoller_1 = require("../controllers/books.conteoller");
-const router = express_1.default.Router();
+var express_1 = __importDefault(require("express"));
+var books_conteoller_1 = require("../controllers/books.conteoller");
+var router = express_1.default.Router();
 // POST /api/books - Create a new book
 router.post('/books', books_conteoller_1.createBook);
 // GET /api/books - Get all books with optional filters

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const validateRequest = (schema) => {
-    return (req, res, next) => {
+var validateRequest = function (schema) {
+    return function (req, res, next) {
         try {
             schema.parse(req.body);
             next();
