@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const books_routes_1 = __importDefault(require("../src/app/routes/books.routes"));
-const borrows_routes_1 = __importDefault(require("../src/app/routes/borrows.routes"));
+const books_routes_1 = __importDefault(require("./app/routes/books.routes"));
+const borrows_routes_1 = __importDefault(require("./app/routes/borrows.routes"));
 const errorHandler_1 = __importDefault(require("./app/middlewares/errorHandler"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
