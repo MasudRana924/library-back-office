@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var validateRequest = function (schema) {
     return function (req, res, next) {
         try {
@@ -10,9 +10,9 @@ var validateRequest = function (schema) {
             res.status(400).json({
                 success: false,
                 message: 'Validation failed',
-                error: error.errors || error.message,
+                error: error.errors || error.message
             });
         }
     };
 };
-exports.default = validateRequest;
+exports["default"] = validateRequest;

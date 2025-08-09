@@ -2,15 +2,15 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var mongoose_1 = __importDefault(require("mongoose"));
 var errorHandler = function (err, req, res, next) {
     // Handle Mongoose ValidationError
-    if (err instanceof mongoose_1.default.Error.ValidationError) {
+    if (err instanceof mongoose_1["default"].Error.ValidationError) {
         res.status(400).json({
             message: 'Validation failed',
             success: false,
-            error: err,
+            error: err
         });
         return next();
     }
@@ -26,8 +26,8 @@ var errorHandler = function (err, req, res, next) {
                 code: 11000,
                 keyPattern: err.keyPattern,
                 keyValue: err.keyValue,
-                message: "Duplicate value for field \"".concat(field, "\": \"").concat(value, "\""),
-            },
+                message: "Duplicate value for field \"".concat(field, "\": \"").concat(value, "\"")
+            }
         });
         return next();
     }
@@ -35,8 +35,8 @@ var errorHandler = function (err, req, res, next) {
     res.status(500).json({
         message: 'Internal server error',
         success: false,
-        error: err.message || err,
+        error: err.message || err
     });
     return next();
 };
-exports.default = errorHandler;
+exports["default"] = errorHandler;
